@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./platform.css">
+    <title>森林火灾排放特征及气象因素影响研究平台</title>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <div id="nav">
+        <div id="logo">PLATFORM</div>
+        <div id="satetype">Himawari-8</div>
+        <div id="nav-right-serve">
+            <div id="userinfor">
+                <span class='nav-user-infor' id='username'></span>
+                <a class='nav-user-infor' id='condition' href="#"></a>    
+            </div>
+            <a class='nav-lables' href="index.html">Home</a>
+            <a class='nav-lables' href="#">About</a>
+            <a class='nav-lables' href="#">Services</a>
+            <a class='nav-lables' href="#">Contact</a>
+            <button class='display-btn' id="Display">Display</button>
+            <button class='display-btn' id="Data">Data</button>
+        </div>
+    </div>
+
+    <div id="display-choose">
+        <select name="" id="choose_type">
+           
+
+            <option value="FRP" class="type">火点辐射功率</option>
+            <option value="FRE" class="type"> 火点辐射能</option>
+
+            <option value="M" class="type">生物量</option>
+            <option value="CO" class="type"> CO气体排放量</option>
+            <option value="CO2" class="type"> CO2气体排放量</option>
+            <option value="PM25" class="type"> PM2.5排放量</option>
+            <option value="BC" class="type"> BC排放量</option>
+            <option value="LossCO2_C" class="type"> 碳计年碳汇损失量</option>
+            <option value="LossCO2_CO2" class="type"> CO2计年碳汇损失量</option>
+        </select>
+        <button id="show-btn" >显示</button>
+
+    </div>
+
+    <!-- 登录 -->
+    <div id="logIn">
+        <div id="logform">
+
+            <h1>Login</h1>
+            <form action="">
+                <input type="text" class='input-style' placeholder="Usename">
+                <!-- <br> -->
+                <input type="password" class='input-style' placeholder="Password">
+
+                <button>登录</button>
+                <button>返回</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 数据操作 -->
+    <div id="data-operate">
+        <!-- 操作选项 -->
+        <div id="choose-lab">
+            <select name="" id="v_type">
+               
+                <option value="FRP" class="type">火点辐射功率</option>
+                <option value="FRE" class="type"> 火点辐射能</option>
+
+                <option value="M" class="type">生物量</option>
+                <option value="CO" class="type"> CO气体排放量</option>
+                <option value="CO2" class="type"> CO2气体排放量</option>
+                <option value="PM25" class="type"> PM2.5排放量</option>
+                <option value="BC" class="type"> BC排放量</option>
+                <option value="LossCO2_C" class="type"> 碳计年碳汇损失量</option>
+                <option value="LossCO2_CO2" class="type"> CO2计年碳汇损失量</option>
+
+            </select>
+            <button class="choose-lab-btn" id="updata-btn">修改数据</button>
+            <button class="choose-lab-btn" id="import-btn">导入数据</button>
+            <button class="choose-lab-btn" id="query-btn">查看数据</button>
+
+            <button class="choose-lab-btn" id="oprate-cancel-btn">取消</button>
+        </div> 
+    </div>
+
+    <!-- 修改表单窗口 -->
+    <div id="formDiv">
+        <div id="formbox">
+            <form action="">
+                <!-- 下拉选框 -->
+                <select id="citychoose">
+                    <option value="beijing" class="cityname">北京</option>
+                    <option value="tianjin" class="cityname">天津</option>
+                    <option value="shanghai" class="cityname">上海</option>
+                    <option value="chongqing" class="cityname">重庆</option>
+                    <option value="hebei" class="cityname">河北</option>
+                    <option value="shanxi" class="cityname">山西</option>
+                    <option value="liaoning" class="cityname">辽宁</option>
+                    <option value="jilin" class="cityname">吉林</option>
+                    <option value="heilongjiang" class="cityname">黑龙江</option>
+                    <option value="jiangsu" class="cityname">江苏</option>
+                    <option value="zhejiang" class="cityname">浙江</option>
+                    <option value="anhui" class="cityname">安徽</option>
+                    <option value="fujian" class="cityname">福建</option>
+                    <option value="jiangxi" class="cityname">江西</option>
+                    <option value="shandong" class="cityname">山东</option>
+                    <option value="henan" class="cityname">河南</option>
+                    <option value="hubei" class="cityname">湖北</option>
+                    <option value="hunan" class="cityname">湖南</option>
+                    <option value="guangdong" class="cityname">广东</option>
+                    <option value="hainan" class="cityname">海南</option>
+                    <option value="sichuan" class="cityname">四川</option>
+                    <option value="guizhou" class="cityname">贵州</option>
+                    <option value="yunnan" class="cityname">云南</option>
+                    <option value="shaanxi" class="cityname">陕西</option>
+                    <option value="gansu" class="cityname">甘肃</option>
+                    <option value="qinghai" class="cityname">青海</option>
+                    <option value="taiwan" class="cityname">台湾</option>
+                    <option value="neimenggu" class="cityname">内蒙古</option>
+                    <option value="guangxi" class="cityname">广西</option>
+                    <option value="xizang" class="cityname">西藏</option>
+                    <option value="ningxia" class="cityname">宁夏</option>
+                    <option value="xinjiang" class="cityname">新疆</option>
+                    <option value="xianggang" class="cityname">香港</option>
+                    <option value="aomen" class="cityname">澳门</option>
+                    <option value="aomen" class="cityname">南海诸岛</option>
+
+                </select>  
+            </form>
+        </div>
+    </div>
+
+    <!-- 查看窗口 -->
+    <div id="displayData">
+        <button id="display-cancel-btn">X</button>
+        <span></span>
+        <table>
+            <thead>
+                <tr>
+                    <td>城市名</td>
+                    <td>价值量</td>
+                    <td>修改者</td>
+                    <td>修改时间</td>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- 导入窗口 -->
+    <div id="importData">
+        <h1>读取数据文件</h1>
+        <input type="file" id="fileInput" accept=".json">
+        <label for="fileInput" class="custom-file-label">选择文件</label>
+        <div id="sliderdiv">
+            <label for="slider">选择数据:</label>
+            <input type="range" id="slider" min="0" max="0" value="0">
+            <span id="selectedValue"></span>
+        </div>
+        <button id="confirm">确定</button>
+        <button id="importclose">关闭</button>
+
+    </div>
+
+
+    <!-- 视图容器 -->
+    <div id="viewDiv">
+        <div id="viewMap"></div>
+    </div>
+
+    <!-- JavaScript -->
+    <!-- 引入echart与js底图 -->
+    <script src="./echarts.js"></script>
+    <script src="./china.js"></script>
+    <script type="text/javascript">
+
+    //绘图函数 
+    function display_chart(getData,Max,Min,chartname)
+    {
+        // 初始化
+        Max=Max||0
+        Min=Min||0
+        chartname=chartname||''
+        // 如果画布不为空则清除画布存在的内容
+        const canvas = document.querySelector('canvas[data-zr-dom-id="zr_0"]');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            // 清空画布
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+        //基于准备好的dom，初始化echarts实例
+        let myChart = echarts.init(document.querySelector('#viewMap'));
+        // 指定图表的配置项和数据
+        let option = 
+        {
+        title: 
+        {//设置地图标题
+            text:  `省级行政区${chartname}核算`,//图名
+            left: 'center',//地图在横向上的位置
+            top: '0',//地图距其DIV上边界的距离
+            textStyle: 
+            {//图名字号大小
+                fontSize: 30,
+            },
+        },
+        backgroundColor: 'white',//Echarts图背景颜色
+        tooltip: 
+        {
+            //地图悬浮框显示内容
+            //formatter: '{b}',
+            trigger:"item"
+        },
+        visualMap: 
+        {
+
+
+
+
+            type: 'continuous', //分段型 
+            min:Min-1,
+            max:Max+1,
+            range:[Min,Max],
+            text:["High","Low"],
+            calculable:true,
+            color:['orangered', '#FFDB58', 'green'],
+            left: 'left',
+            bottom: 'bottom',
+            textStyle: 
+            {//图例字号大小及颜色
+                color: '#000000',
+                fontSize: 12
+            },
+        },
+        series: 
+        [{
+            type: 'map',
+            map: 'china',
+            label: 
+            {
+                show: false,//显示省份标签
+                color: "#000000",//省份标签字体颜色
+                emphasis:
+                {
+                    show: true,
+                    textStyle: { color: "#800080" }
+                }
+            },
+            data:getData
+        }],
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+    }
+    </script>
+   
+
+
+    <script>
+        // 登录按钮渲染
+        let logCondition=false
+        logRender()
+        document.querySelector('#userinfor').addEventListener('click',function(e){
+            // 点击登录按钮
+            if(e.target.tagName==='A')
+            {
+                e.preventDefault()
+                // （在本地存储中）判断是否已经登陆
+                if(localStorage.getItem('username'))
+                {
+                    localStorage.removeItem('username')
+                    // 如未登录，保存登录信息并调用按钮渲染函数
+                    logRender()
+                }
+                // 如已登录，渲染logIn
+                else
+                {
+                    document.querySelector('#logIn').style.display='flex'
+                }
+            }
+        })
+
+
+
+        // 登录渲染函数
+        function logRender()
+        {  
+            document.querySelector('#username').innerText=localStorage.getItem('username')?`User:${localStorage.getItem('username')}`:''
+            document.querySelector('#condition').innerText=localStorage.getItem('username')?'Logout':'Login'
+            document.querySelector('#updata-btn').disabled =localStorage.getItem('username')?false:true
+            document.querySelector('#updata-btn').innerText =localStorage.getItem('username')?'修改数据':'请先登录'    
+        }
+
+
+
+        // 登录界面
+        document.querySelector('#logIn button').addEventListener('click',function(e){
+            e.preventDefault()
+            // 输入规则
+            const username=document.querySelector('#logIn input').value
+            if(username==='')
+                return alert('用户名不能为空')
+            // 登录，保存登录信息
+            else
+            {
+                localStorage.setItem('username',username)
+                document.querySelector('#logIn').style.display='none'
+                logRender()
+            }
+        })
+        //数据操作按钮Data
+        document.querySelector('#Data').addEventListener('click',function(){
+            document.querySelector('#data-operate').style.display='flex' 
+        })
+
+
+
+        // 计算参数对象（后续可添加或修改）
+        const valueobj={
+           
+
+            FRP:['FRP'],
+            FRE:['FRP','timeInterval','fireArea'],
+            M:['FRE'],
+            CO:['M'],
+            CO2:['M'],
+            PM25:['M'],
+            BC:['M'],
+            LossCO2_C:['LossCO2_C'],
+            LossCO2_CO2:['LossC'],
+        }
+        let result_kuihua={}
+        if(localStorage.getItem('result_kuihua'))
+        {            
+            result_kuihua=JSON.parse(localStorage.getItem('result_kuihua'))
+        }
+        else
+        {
+            result_kuihua={
+                FRP: {
+                        北京: [0, 0, 0],
+                        天津: [0, 0, 0],
+                        上海: [0, 0, 0],
+                        重庆: [0, 0, 0],
+                        河北: [0, 0, 0],
+                        山西: [0, 0, 0],
+                        辽宁: [0, 0, 0],
+                        吉林: [0, 0, 0],
+                        黑龙江: [0, 0, 0],
+                        江苏: [0, 0, 0],
+                        浙江: [0, 0, 0],
+                        安徽: [0, 0, 0],
+                        福建: [0, 0, 0],
+                        江西: [0, 0, 0],
+                        山东: [0, 0, 0],
+                        河南: [0, 0, 0],
+                        湖北: [0, 0, 0],
+                        湖南: [0, 0, 0],
+                        广东: [0, 0, 0],
+                        海南: [0, 0, 0],
+                        四川: [0, 0, 0],
+                        贵州: [0, 0, 0],
+                        云南: [0, 0, 0],
+                        陕西: [0, 0, 0],
+                        甘肃: [0, 0, 0],
+                        青海: [0, 0, 0],
+                        台湾: [0, 0, 0],
+                        内蒙古: [0, 0, 0],
+                        广西: [0, 0, 0],
+                        西藏: [0, 0, 0],
+                        宁夏: [0, 0, 0],
+                        新疆: [0, 0, 0],
+                        香港: [0, 0, 0],
+                        澳门: [0, 0, 0],
+                        南海诸岛: [0, 0, 0]
+                    },
+                FRE: {
+                        北京: [0, 0, 0],
+                        天津: [0, 0, 0],
+                        上海: [0, 0, 0],
+                        重庆: [0, 0, 0],
+                        河北: [0, 0, 0],
+                        山西: [0, 0, 0],
+                        辽宁: [0, 0, 0],
+                        吉林: [0, 0, 0],
+                        黑龙江: [0, 0, 0],
+                        江苏: [0, 0, 0],
+                        浙江: [0, 0, 0],
+                        安徽: [0, 0, 0],
+                        福建: [0, 0, 0],
+                        江西: [0, 0, 0],
+                        山东: [0, 0, 0],
+                        河南: [0, 0, 0],
+                        湖北: [0, 0, 0],
+                        湖南: [0, 0, 0],
+                        广东: [0, 0, 0],
+                        海南: [0, 0, 0],
+                        四川: [0, 0, 0],
+                        贵州: [0, 0, 0],
+                        云南: [0, 0, 0],
+                        陕西: [0, 0, 0],
+                        甘肃: [0, 0, 0],
+                        青海: [0, 0, 0],
+                        台湾: [0, 0, 0],
+                        内蒙古: [0, 0, 0],
+                        广西: [0, 0, 0],
+                        西藏: [0, 0, 0],
+                        宁夏: [0, 0, 0],
+                        新疆: [0, 0, 0],
+                        香港: [0, 0, 0],
+                        澳门: [0, 0, 0],
+                        南海诸岛: [0, 0, 0]
+
+                },
+                CO: {
+                        北京: [0, 0, 0],
+                        天津: [0, 0, 0],
+                        上海: [0, 0, 0],
+                        重庆: [0, 0, 0],
+                        河北: [0, 0, 0],
+                        山西: [0, 0, 0],
+                        辽宁: [0, 0, 0],
+                        吉林: [0, 0, 0],
+                        黑龙江: [0, 0, 0],
+                        江苏: [0, 0, 0],
+                        浙江: [0, 0, 0],
+                        安徽: [0, 0, 0],
+                        福建: [0, 0, 0],
+                        江西: [0, 0, 0],
+                        山东: [0, 0, 0],
+                        河南: [0, 0, 0],
+                        湖北: [0, 0, 0],
+                        湖南: [0, 0, 0],
+                        广东: [0, 0, 0],
+                        海南: [0, 0, 0],
+                        四川: [0, 0, 0],
+                        贵州: [0, 0, 0],
+                        云南: [0, 0, 0],
+                        陕西: [0, 0, 0],
+                        甘肃: [0, 0, 0],
+                        青海: [0, 0, 0],
+                        台湾: [0, 0, 0],
+                        内蒙古: [0, 0, 0],
+                        广西: [0, 0, 0],
+                        西藏: [0, 0, 0],
+                        宁夏: [0, 0, 0],
+                        新疆: [0, 0, 0],
+                        香港: [0, 0, 0],
+                        澳门: [0, 0, 0],
+                        南海诸岛: [0, 0, 0]
+                },
+                M: {
+                        北京: [0, 0, 0],
+                        天津: [0, 0, 0],
+                        上海: [0, 0, 0],
+                        重庆: [0, 0, 0],
+                        河北: [0, 0, 0],
+                        山西: [0, 0, 0],
+                        辽宁: [0, 0, 0],
+                        吉林: [0, 0, 0],
+                        黑龙江: [0, 0, 0],
+                        江苏: [0, 0, 0],
+                        浙江: [0, 0, 0],
+                        安徽: [0, 0, 0],
+                        福建: [0, 0, 0],
+                        江西: [0, 0, 0],
+                        山东: [0, 0, 0],
+                        河南: [0, 0, 0],
+                        湖北: [0, 0, 0],
+                        湖南: [0, 0, 0],
+                        广东: [0, 0, 0],
+                        海南: [0, 0, 0],
+                        四川: [0, 0, 0],
+                        贵州: [0, 0, 0],
+                        云南: [0, 0, 0],
+                        陕西: [0, 0, 0],
+                        甘肃: [0, 0, 0],
+                        青海: [0, 0, 0],
+                        台湾: [0, 0, 0],
+                        内蒙古: [0, 0, 0],
+                        广西: [0, 0, 0],
+                        西藏: [0, 0, 0],
+                        宁夏: [0, 0, 0],
+                        新疆: [0, 0, 0],
+                        香港: [0, 0, 0],
+                        澳门: [0, 0, 0],
+                        南海诸岛: [0, 0, 0]
+                },
+                CO2: {
+                        北京: [0, 0, 0],
+                        天津: [0, 0, 0],
+                        上海: [0, 0, 0],
+                        重庆: [0, 0, 0],
+                        河北: [0, 0, 0],
+                        山西: [0, 0, 0],
+                        辽宁: [0, 0, 0],
+                        吉林: [0, 0, 0],
+                        黑龙江: [0, 0, 0],
+                        江苏: [0, 0, 0],
+                        浙江: [0, 0, 0],
+                        安徽: [0, 0, 0],
+                        福建: [0, 0, 0],
+                        江西: [0, 0, 0],
+                        山东: [0, 0, 0],
+                        河南: [0, 0, 0],
+                        湖北: [0, 0, 0],
+                        湖南: [0, 0, 0],
+                        广东: [0, 0, 0],
+                        海南: [0, 0, 0],
+                        四川: [0, 0, 0],
+                        贵州: [0, 0, 0],
+                        云南: [0, 0, 0],
+                        陕西: [0, 0, 0],
+                        甘肃: [0, 0, 0],
+                        青海: [0, 0, 0],
+                        台湾: [0, 0, 0],
+                        内蒙古: [0, 0, 0],
+                        广西: [0, 0, 0],
+                        西藏: [0, 0, 0],
+                        宁夏: [0, 0, 0],
+                        新疆: [0, 0, 0],
+                        香港: [0, 0, 0],
+                        澳门: [0, 0, 0],
+                        南海诸岛: [0, 0, 0]
+                },
+                PM25: {
+                        北京: [0, 0, 0],
+                        天津: [0, 0, 0],
+                        上海: [0, 0, 0],
+                        重庆: [0, 0, 0],
+                        河北: [0, 0, 0],
+                        山西: [0, 0, 0],
+                        辽宁: [0, 0, 0],
+                        吉林: [0, 0, 0],
+                        黑龙江: [0, 0, 0],
+                        江苏: [0, 0, 0],
+                        浙江: [0, 0, 0],
+                        安徽: [0, 0, 0],
+                        福建: [0, 0, 0],
+                        江西: [0, 0, 0],
+                        山东: [0, 0, 0],
+                        河南: [0, 0, 0],
+                        湖北: [0, 0, 0],
+                        湖南: [0, 0, 0],
+                        广东: [0, 0, 0],
+                        海南: [0, 0, 0],
+                        四川: [0, 0, 0],
+                        贵州: [0, 0, 0],
+                        云南: [0, 0, 0],
+                        陕西: [0, 0, 0],
+                        甘肃: [0, 0, 0],
+                        青海: [0, 0, 0],
+                        台湾: [0, 0, 0],
+                        内蒙古: [0, 0, 0],
+                        广西: [0, 0, 0],
+                        西藏: [0, 0, 0],
+                        宁夏: [0, 0, 0],
+                        新疆: [0, 0, 0],
+                        香港: [0, 0, 0],
+                        澳门: [0, 0, 0],
+                        南海诸岛: [0, 0, 0]
+                },
+                BC: {
+                        北京: [0, 0, 0],
+                        天津: [0, 0, 0],
+                        上海: [0, 0, 0],
+                        重庆: [0, 0, 0],
+                        河北: [0, 0, 0],
+                        山西: [0, 0, 0],
+                        辽宁: [0, 0, 0],
+                        吉林: [0, 0, 0],
+                        黑龙江: [0, 0, 0],
+                        江苏: [0, 0, 0],
+                        浙江: [0, 0, 0],
+                        安徽: [0, 0, 0],
+                        福建: [0, 0, 0],
+                        江西: [0, 0, 0],
+                        山东: [0, 0, 0],
+                        河南: [0, 0, 0],
+                        湖北: [0, 0, 0],
+                        湖南: [0, 0, 0],
+                        广东: [0, 0, 0],
+                        海南: [0, 0, 0],
+                        四川: [0, 0, 0],
+                        贵州: [0, 0, 0],
+                        云南: [0, 0, 0],
+                        陕西: [0, 0, 0],
+                        甘肃: [0, 0, 0],
+                        青海: [0, 0, 0],
+                        台湾: [0, 0, 0],
+                        内蒙古: [0, 0, 0],
+                        广西: [0, 0, 0],
+                        西藏: [0, 0, 0],
+                        宁夏: [0, 0, 0],
+                        新疆: [0, 0, 0],
+                        香港: [0, 0, 0],
+                        澳门: [0, 0, 0],
+                        南海诸岛: [0, 0, 0]
+                },
+                LossCO2_C: {
+                        北京: [0, 0, 0],
+                        天津: [0, 0, 0],
+                        上海: [0, 0, 0],
+                        重庆: [0, 0, 0],
+                        河北: [0, 0, 0],
+                        山西: [0, 0, 0],
+                        辽宁: [0, 0, 0],
+                        吉林: [0, 0, 0],
+                        黑龙江: [0, 0, 0],
+                        江苏: [0, 0, 0],
+                        浙江: [0, 0, 0],
+                        安徽: [0, 0, 0],
+                        福建: [0, 0, 0],
+                        江西: [0, 0, 0],
+                        山东: [0, 0, 0],
+                        河南: [0, 0, 0],
+                        湖北: [0, 0, 0],
+                        湖南: [0, 0, 0],
+                        广东: [0, 0, 0],
+                        海南: [0, 0, 0],
+                        四川: [0, 0, 0],
+                        贵州: [0, 0, 0],
+                        云南: [0, 0, 0],
+                        陕西: [0, 0, 0],
+                        甘肃: [0, 0, 0],
+                        青海: [0, 0, 0],
+                        台湾: [0, 0, 0],
+                        内蒙古: [0, 0, 0],
+                        广西: [0, 0, 0],
+                        西藏: [0, 0, 0],
+                        宁夏: [0, 0, 0],
+                        新疆: [0, 0, 0],
+                        香港: [0, 0, 0],
+                        澳门: [0, 0, 0],
+                        南海诸岛: [0, 0, 0]
+                },
+                LossCO2_CO2: {
+                        北京: [0, 0, 0],
+                        天津: [0, 0, 0],
+                        上海: [0, 0, 0],
+                        重庆: [0, 0, 0],
+                        河北: [0, 0, 0],
+                        山西: [0, 0, 0],
+                        辽宁: [0, 0, 0],
+                        吉林: [0, 0, 0],
+                        黑龙江: [0, 0, 0],
+                        江苏: [0, 0, 0],
+                        浙江: [0, 0, 0],
+                        安徽: [0, 0, 0],
+                        福建: [0, 0, 0],
+                        江西: [0, 0, 0],
+                        山东: [0, 0, 0],
+                        河南: [0, 0, 0],
+                        湖北: [0, 0, 0],
+                        湖南: [0, 0, 0],
+                        广东: [0, 0, 0],
+                        海南: [0, 0, 0],
+                        四川: [0, 0, 0],
+                        贵州: [0, 0, 0],
+                        云南: [0, 0, 0],
+                        陕西: [0, 0, 0],
+                        甘肃: [0, 0, 0],
+                        青海: [0, 0, 0],
+                        台湾: [0, 0, 0],
+                        内蒙古: [0, 0, 0],
+                        广西: [0, 0, 0],
+                        西藏: [0, 0, 0],
+                        宁夏: [0, 0, 0],
+                        新疆: [0, 0, 0],
+                        香港: [0, 0, 0],
+                        澳门: [0, 0, 0],
+                        南海诸岛: [0, 0, 0]
+                },
+            }
+            localStorage.setItem('result_kuihua',JSON.stringify(result_kuihua))
+        }
+        function gettype()
+        {
+            const selectindex=document.querySelector('#v_type').selectedIndex
+            const input_value =document.querySelector('select').options[selectindex].value
+            return input_value
+        }
+        let type
+        document.querySelector('#updata-btn').addEventListener('click',function(){
+
+            document.querySelector('#data-operate').style.display='none'
+            document.querySelector('#formDiv').style.display='flex'
+
+            type=gettype()
+            let addstr=`
+                <select id="citychoose">
+                ${document.querySelector('#citychoose').innerHTML}
+                </select>
+            `
+            
+            document.querySelector('#formbox form').innerHTML=''
+            for(let i=0;i<valueobj[type].length;i++)
+            {
+                addstr+=`
+                <div>
+                    <input class='input-style' placeholder='${valueobj[type][i]}'>
+                    <span class='input-infor'></span>
+                </div>
+                `
+            }
+            addstr+=`
+            <button>修改</button>
+
+            <button id='updata-cancel-btn' type='button'>返回</button>
+
+            `
+            document.querySelector('#formbox form').innerHTML+=addstr
+            document.querySelector('#updata-cancel-btn').addEventListener('click',function(){
+                document.querySelector('#formDiv').style.display='none'
+                document.querySelector('#data-operate').style.display='flex'
+            }) 
+        })
+
+    
+
+        //操作页面关闭按钮
+        document.querySelector('#oprate-cancel-btn').addEventListener('click',function(){
+            document.querySelector('#data-operate').style.display='none'
+        })
+
+
+
+
+
+
+
+
+
+// //////////////////////////////////////////////////////////////
+        document.querySelector('#import-btn').addEventListener('click',function(){
+            document.querySelector('#importData').style.display='block'
+            document.querySelector('#data-operate').style.display='none'
+
+        })
+
+        // 关闭导入
+        document.querySelector('#importclose').addEventListener('click',function(){
+            document.querySelector('#importData').style.display='none'
+            document.querySelector('#data-operate').style.display='block'
+
+        })
+
+        // 获取下拉选框选取的要操作的城市名
+        let cityname=document.querySelector('#citychoose').options[document.querySelector('#citychoose').selectedIndex].text;
+
+        //回调验证输入内容是否合法
+        document.querySelector('#formbox form').addEventListener('change',function(e){
+            
+        if(e.target.tagName==='INPUT')
+        {
+            e.target.nextElementSibling.classList='input-infor'
+            testform(e.target)            
+        }
+        else if(e.target.tagName==='SELECT')
+        {
+            cityname=document.querySelector('#citychoose').options[document.querySelector('#citychoose').selectedIndex].text;
+            
+        }
+        })
+
+
+
+        //提交表单监听
+        let result_kuihuadata
+        let typename
+        
+        
+
+        document.querySelector('#formbox form').addEventListener('submit',function(e){
+            e.preventDefault()
+            const input=document.querySelectorAll('#formbox input')
+            // 利用自定义的验证函数判断表单输入验证是否通过
+            let judge=true
+            for(let i=0;i<input.length;i++)
+            {
+
+                if(!testform(input[i])||e.target.value==='')
+                    judge=false
+            }
+
+            // 未通过：提交错误并终止程序
+            if(!judge)
+                return alert('输入不可为空或存在非法输入')
+            // 通过：调用对应计算函数并保存计算结果
+            else
+            {
+
+
+                typename=document.querySelector(`[value=${type}]`).innerText
+                
+                // 确认弹窗
+                
+                if(confirm(`确定要修改${cityname}的${typename}数据吗`))
+                {
+                    
+                    
+                    const strdataarr=(Array.from(input)).map(ele=>ele.value)
+                    const dataarr=strdataarr.map(ele=>+ele)
+                    
+                    //调用计算函数并存储结果
+                    
+                    result_kuihuadata=[Culculate[type](dataarr),localStorage.getItem('username'),new Date().toLocaleDateString()]
+                    result_kuihua[type][cityname]=result_kuihuadata
+                    localStorage.setItem('result_kuihua',JSON.stringify(result_kuihua))
+                    
+                    // 清空验证信息
+                    document.querySelector('#formbox form').reset()
+                    Array.from(input).forEach((ele)=>{
+                        ele.nextElementSibling.innerText=''
+                    })
+                    
+                }
+            }
+        })
+
+
+
+        //显示按钮以及显示效果
+        let timer1,timer2
+
+        document.querySelector('#Display').addEventListener('mouseenter',function(){
+            if(timer1)
+            {
+                clearTimeout(timer1)
+            }
+            document.querySelector('#display-choose').style.display='flex'
+        })
+        document.querySelector('#Display').addEventListener('mouseleave',function(){
+                timer1=setTimeout(()=>{
+                document.querySelector('#display-choose').style.display='none'
+            },300)
+        })
+        document.querySelector('#display-choose').addEventListener('mouseenter',function(){
+            clearTimeout(timer1)
+            clearTimeout(timer2)
+            this.style.display='flex'
+        })
+        document.querySelector('#display-choose').addEventListener('mouseleave',function(){
+            timer2=setTimeout(()=>{
+                this.style.display='none'
+            },500)
+        })
+
+
+
+        //图像显示，包装需要的参数并传递给图像渲染函数
+        function Adata(name,value)
+        {
+            this.name=name,
+            this.value=value
+        }
+        let showData
+        let max,min
+        const showChoose=document.querySelector('#choose_type')
+        document.querySelector('#show-btn').addEventListener('click',function(){
+            let data=JSON.parse(localStorage.getItem('result_kuihua'))
+            
+            showData=Object.entries(data[showChoose.value]).map(ele=>
+                {
+                    const newdata=new Adata(ele[0],ele[1][0])
+                    return newdata
+                }
+            )
+
+        const values = showData.map(item => item.value);
+
+        // 计算最大值和最小值
+        max = Math.max(...values); // 使用扩展运算符展开数组
+        min = Math.min(...values);
+        const name=showChoose.options[showChoose.selectedIndex].text
+            display_chart(showData,max,min,name)
+            
+        })
+
+
+
+        // 数据展示
+        document.querySelector('#query-btn').addEventListener('click',function(){
+            document.querySelector('#data-operate').style.display='none'
+            document.querySelector('#displayData').style.display='flex'
+            const result_kuihuadata=JSON.parse(localStorage.getItem('result_kuihua'))
+            type=gettype()
+            document.querySelector('#displayData span').innerText=document.querySelector(`[value='${type}']`).innerText
+
+            const entriesArray = Object.entries(result_kuihuadata[type])
+            
+            let displaystr=entriesArray.map((ele,index)=>{     
+                return `
+                <tr>
+                    <td>${ele[0]}</td>
+                    <td>${ele[1][0]}</td>
+                    <td>${ele[1][1]}</td>
+                    <td>${ele[1][2]}</td>
+                </tr>
+                `
+            })
+            document.querySelector('#displayData tbody').innerHTML=displaystr.join('') 
+        })
+        document.querySelector('#display-cancel-btn').addEventListener('click',function(){
+            document.querySelector('#data-operate').style.display='flex'
+            document.querySelector('#displayData').style.display='none'
+
+        })
+
+
+
+        // 价值量计算函数对象
+        const CR = 0.41; // 生物量与FRE的比例系数
+        const EF_CO = 0.1045; // CO排放因子
+        const EF_CO2 = 1630; // CO2排放因子
+        const EF_PM25 = 12.83; // PM2.5排放因子
+        const EF_SO2 = 1.0; // SO2排放因子
+        const EF_NOx = 2.15; // NOx排放因子
+        const EF_OC = 9.45; // OC排放因子
+        const EF_VOCs = 8.35; // VOCs排放因子
+        const EF_NH3 = 1.97; // NH3排放因子
+        const EF_PM10 = 14.88; // PM10排放因子
+        const EF_BC = 0.137; // BC排放因子
+        const MCMCO2=3.664
+
+        const Culculate={
+            FRP(arr)
+            {
+                const [FRP] = arr;
+                return FRP;
+            },
+
+            FRE(arr)
+            {
+                const [FRP, timeInterval, fireArea] = arr;
+                return FRP * timeInterval * fireArea;
+            },
+
+            M(arr)
+            {
+                const FRE_value = arr;
+                return FRE_value * CR;
+            },
+
+            CO(arr)
+            {
+                const M_value = arr;
+                return M_value * EF_CO;
+            },
+            CO2(arr)
+            {
+                const M_value = arr;
+                return M_value * EF_CO2;
+            },
+            PM25(arr)
+            {
+                const M_value = arr;
+                return M_value * EF_PM25;
+            },
+            BC(arr)
+            {
+                const M_value = arr;
+                return M_value * EF_BC;
+            },
+            LossCO2_C(arr)
+            {
+                const LossC = arr;
+                return LossC;
+            },
+            LossCO2_CO2(arr)
+            {
+                const LossC = arr;
+                return LossC * MCMCO2;
+            }
+        }
+        //正则验证函数
+        function testform(input)
+        {
+            const regex = /^-?\d*\.?\d+$/ 
+            if(regex.test(input.value))
+            {
+                input.nextElementSibling.classList.add('ture-input')
+                input.nextElementSibling.innerText='输入正确'
+                return true
+            }
+            else
+            {
+                input.nextElementSibling.classList.add('fault-input')
+                input.nextElementSibling.innerText='非法输入'
+                return false
+            } 
+        }
+        let filePath = '';
+        let allDates = [];
+        let jsonData = null;
+        let targetDate='';
+        document.getElementById('fileInput').addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            
+            // 存储文件路径（在浏览器环境中，通常只能获取文件名）
+            filePath = file.name;
+            
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                try {
+                    // 解析JSON数据
+                    jsonData = JSON.parse(event.target.result);
+                    localStorage.setItem('rawdata',JSON.stringify(jsonData))
+                    // 提取所有FRP日期
+                    extractDates(jsonData);
+                    
+                    // 打印结果用于测试
+                    const slider = document.getElementById('slider');
+                    const selectedValue = document.getElementById('selectedValue');
+                     // 设置滑块的最大值为数组长度减1
+                    slider.max = allDates.length - 1;
+
+                    // 初始化显示第一个数据
+                    selectedValue.textContent = allDates[0];
+
+                    // 监听滑块的变化事件
+                    slider.addEventListener('input', function() {
+                        const index = parseInt(this.value);
+                        selectedValue.textContent = allDates[index];
+                        targetDate=allDates[index]
+                        
+                    });
+                    
+                } catch (error) {
+                    alert('文件解析错误，请确保上传有效的JSON文件');
+                }
+                
+            };
+            reader.readAsText(file);
+            
+        });
+
+        function extractDates(data) {
+            const dateSet = new Set(); // Set去重
+            jsonData.forEach(item => {
+                Object.keys(item).forEach(key => {
+                    if (key.startsWith('FRP-')) {
+                        const datePart = key.split('-')[1];
+                        dateSet.add(datePart);
+                    }
+                });
+            });
+            allDates = Array.from(dateSet).sort((a, b) => {
+                return new Date(a.replace(/\//g, '-')) - new Date(b.replace(/\//g, '-'));
+            });
+        }
+            let timerelatedata=null
+            document.querySelector('#confirm').addEventListener('click',function(){
+            let result=localStorage.getItem('result_kuihua')
+            result=JSON.parse(result)
+
+            timerelatedata=accumulateByProvince(jsonData, targetDate)
+            result.FRP=timerelatedata
+            result.BC=multiplyFirstElement(timerelatedata,EF_BC)
+            result.CO=multiplyFirstElement(timerelatedata,EF_CO)
+            result.CO2=multiplyFirstElement(timerelatedata,EF_CO2)
+            result.FRE=multiplyFirstElement(timerelatedata,1)
+            result.M=multiplyFirstElement(timerelatedata,CR)
+            result.PM25=multiplyFirstElement(timerelatedata,EF_PM25)
+
+
+            
+            localStorage.setItem('result_kuihua',JSON.stringify(result))
+            alert("导入完成！")   
+        })
+        function accumulateByProvince(jsonData, targetDate) {
+            // 初始化省份累加器
+            const result = {
+                北京: [0, 0, 0],
+                天津: [0, 0, 0],
+                上海: [0, 0, 0],
+                重庆: [0, 0, 0],
+                河北: [0, 0, 0],
+                山西: [0, 0, 0],
+                辽宁: [0, 0, 0],
+                吉林: [0, 0, 0],
+                黑龙江: [0, 0, 0],
+                江苏: [0, 0, 0],
+                浙江: [0, 0, 0],
+                安徽: [0, 0, 0],
+                福建: [0, 0, 0],
+                江西: [0, 0, 0],
+                山东: [0, 0, 0],
+                河南: [0, 0, 0],
+                湖北: [0, 0, 0],
+                湖南: [0, 0, 0],
+                广东: [0, 0, 0],
+                海南: [0, 0, 0],
+                四川: [0, 0, 0],
+                贵州: [0, 0, 0],
+                云南: [0, 0, 0],
+                陕西: [0, 0, 0],
+                甘肃: [0, 0, 0],
+                青海: [0, 0, 0],
+                台湾: [0, 0, 0],
+                内蒙古: [0, 0, 0],
+                广西: [0, 0, 0],
+                西藏: [0, 0, 0],
+                宁夏: [0, 0, 0],
+                新疆: [0, 0, 0],
+                香港: [0, 0, 0],
+                澳门: [0, 0, 0],
+                南海诸岛: [0, 0, 0]
+            };
+            const dateKey = `FRP-${targetDate}`;
+            jsonData.forEach(item => {
+                const province = item['省'];
+                const value = parseFloat(item[dateKey]) || 0;
+                if (result.hasOwnProperty(province)) {                    
+                    result[province][0] += value;
+                }
+            });
+            return result;
+        }
+        
+        function multiplyFirstElement(data, multiplier) {
+            const result = {...data}; 
+            
+            for (const key in result) {
+                if (Array.isArray(result[key]) && result[key].length > 0) {
+                    // 确保是数组且至少有一个元素
+                    result[key] = [...result[key]]; // 创建数组的浅拷贝
+                    result[key][0] = result[key][0] * multiplier; // 修改第一个元素
+                }
+            }
+            
+            return result;
+        }
+
+    </script>
+</body>
+</html>
