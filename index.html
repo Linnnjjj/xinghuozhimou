@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>星火智眸 - 基于多源卫星的火灾遥感监测与燃烧排放追踪系统</title>
+    <title>森林碳管家</title>
     <style>
         * {
             margin: 0;
@@ -298,10 +298,7 @@
             padding: 15px;
             /* width: 30%; */
         }
-        .earth-visualization
-        {
-            /* width: 30%; */
-        }
+
         .earth-visualization {
             margin: 0;
             min-height: 200px;
@@ -335,24 +332,23 @@
     </div>
 
     <div class="hero-section">
-        <h1 class="main-title">星火智眸</h1>
-        <p class="subtitle">基于多源卫星的火灾遥感监测与燃烧排放追踪系统</p>
+        <h1 class="main-title">森林碳管家</h1>
+        <p class="subtitle">基于多源遥感的森林火灾全周期碳通量监测与追踪系统</p>
         
         <div class="main-nav">
-            <div class="nav-item active">系统简介</div>
-            <div class="nav-item">遥感预警</div>
-            <div class="nav-item">森林变化</div>
-            <div class="nav-item">火情分析</div>
-            <div class="nav-item">碳达标核算</div>
+            <div class="nav-item active" id="system-introduction">系统简介</div>
+            <div class="nav-item" id="forest-changes">森林变化</div>
+            <div class="nav-item"  id="fire-analysis">火灾碳排放</div>
+            <div class="nav-item" id="C-accounting">碳汇损失</div>
         </div>
     </div>
 
     <div id="content-section1" class="content-section">
         <div class="text-content">
-            <h2 class="section-title">多源卫星遥感监测</h2>
+            <h2 class="section-title">多源卫星协同监测</h2>
             <p class="description">
-                @pixelbeat<br>
-                "星火智眸"创新性融合MODIS、Himawari-8等多源卫星数据，采用自上而下的方式，构建空天地协同系统。MODIS卫星每日1km分辨率全覆盖，36个光谱波段从可见光到热红外区间扫描全球森林;Himawari-8卫星凭借热红外数据10分钟级高频刷新，多源卫星数据融合优势互补，大幅提升监测时效性与精准度。
+                <!-- @pixelbeat<br> -->
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;系统通过整合MODIS、VIIRS、Himawari以及风云四号卫星数据，各类卫星的功能互补：MODIS提供大范围每日覆盖，VIIRS以375米高分辨率精准识别小火点，而Himawari和风云四号静止卫星可实现10分钟级高频观测，实时追踪火情动态。多源数据融合突破了单一卫星的观测局限，为后续精准评估提供了全面、可靠的数据基础。
             </p>
         </div>
         
@@ -366,20 +362,20 @@
             <video src="https://framerusercontent.com/assets/KN4OLVngCQOTf2aAWiFAL8VGto.mp4" loop preload="auto" playsinline autoplay></video>
         </div>
         <div class="text-content">
-            <h2 class="section-title">火情精准监测与排放核算</h2>
+            <h2 class="section-title">“碳源+碳汇”算法框架</h2>
             <p class="description">
-                @pixelbeat<br>
-                基于辐射传输理论与机器学习模型的燃烧强度反演算法，结合森林植被、地形地貌等因素，精准反演火点辐射能量值，进而推算火灾燃烧强度、进程与规模。同时构建多尺度排放因子库，能实时、精准核算 CO₂、PM2.5 等森林火灾相关污染物排放量，达国际碳监测计划（ICOS）标准。            </p>
+                <!-- @pixelbeat<br> -->
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;该框架实现火灾碳影响的全链条核算，包括两大核心算法：<br>（1）直接碳排放评估：结合卫星观测的火点辐射功率（FRP）数据，基于火点辐射能量（FRE）模型，精准计算森林火灾燃烧释放的二氧化碳总量。<br>（2）未来碳汇损失评估：创新性地引入基于生态系统净初级生产力（NPP）的评估模型。通过对比火灾前区域NPP基准数据与火灾造成的植被破坏程度，科学量化森林未来长期的碳吸收能力损失。            </p>
         </div>
     </div>
 
     <div id="content-section3" class="content-section">
         
         <div class="text-content">
-            <h2 class="section-title">多领域高效应用</h2>
+            <h2 class="section-title">全周期碳通量评估与决策支持</h2>
             <p class="description">
-                @pixelbeat<br>
-                为森林管理部门、消防局等提供有力监测支持。卫星可快速发现火情，将火情发现时间缩短至 30 分钟以内，为快速灭火争取宝贵时间。还能凭借高精度碳排放核算能力，助力相关部门了解碳排放现状，制定合理碳中和策略，在环保、生态资源管理等领域效益显著            </p>
+                <!-- @pixelbeat<br> -->
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;依托多源数据融合与双轨算法，“森林碳管家”可精确量化一场火灾从“瞬时排放”到“长期吸收损失”的全周期碳流量。评估结果可为生态资产核算、灾后恢复规划及碳管理提供科学依据，同时为完善国家碳核算体系提供高精度数据支撑，最终为实现“双碳”目标提供智慧化解决方案。            </p>
         </div>
 
         <div class="earth-visualization">
@@ -398,12 +394,50 @@
     <script>
         // 导航项点击事件
         const navItems = document.querySelectorAll('.nav-item');
-        navItems.forEach(item => {
-            item.addEventListener('click', function() {
-                navItems.forEach(i => i.classList.remove('active'));
-                this.classList.add('active');
-            });
+        const fireAnalysis = document.getElementById('fire-analysis');
+        // const RSWarning = document.getElementById('RS-warning');
+        const forestChanges = document.getElementById('forest-changes');
+
+        const systemIntroduction = document.getElementById('system-introduction');
+        const CAccounting = document.getElementById('C-accounting');
+        navItems.forEach(i => i.classList.remove('active'));
+        systemIntroduction.classList.add('active');
+
+        // 火情分析点击事件
+            fireAnalysis.addEventListener('click', function() {
+            navItems.forEach(i => i.classList.remove('active'));
+            // this.classList.add('active');
+            window.location.href = 'fire-analysis.html';
         });
+        
+        // 系统简介点击事件
+            systemIntroduction.addEventListener('click', function() {
+            navItems.forEach(i => i.classList.remove('active'));
+            // this.classList.add('active');
+            window.location.href = 'index.html';
+        });
+
+        // // 遥感预警点击事件
+        //     RSWarning.addEventListener('click', function() {
+        //     navItems.forEach(i => i.classList.remove('active'));
+        //     // this.classList.add('active');
+        //     window.location.href = 'RS-warning.html';
+        // });
+
+        // 森林变化点击事件
+            forestChanges.addEventListener('click', function() {
+            navItems.forEach(i => i.classList.remove('active'));
+            // this.classList.add('active');
+            window.location.href = 'forest-changes.html';
+        });
+
+        // 碳核算点击事件
+            CAccounting.addEventListener('click', function() {
+            navItems.forEach(i => i.classList.remove('active'));
+            // this.classList.add('active');
+            window.location.href = 'C-accounting.html';
+        });
+
     </script>
 </body>
 </html>
