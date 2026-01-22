@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN"> 
+<html lang="zh-CN">
 <head>
     <script src="echarts.js"></script>
     <meta charset="UTF-8">
@@ -239,8 +239,8 @@
             border-top: 1px solid #444;
         }
         
-        /* 手机适配 - 媒体查询 */
-    @media (max-width: 768px) {
+         /* 手机适配 - 媒体查询 */
+         @media (max-width: 768px) {
         .header {
             padding: 10px 15px;
             gap: 10px;
@@ -298,17 +298,23 @@
             padding: 8px 12px;
         }
         
+        .content-section1 {
+            /* flex-direction: column; */
+            margin-bottom: 30px;
+            gap: 20px;
+            padding: 0 15px;
+        }
         .content-section {
             /* flex-direction: column; */
             margin-bottom: 30px;
             gap: 20px;
             padding: 0 15px;
-            /* flex-wrap: nowrap; */
         }
         .text-content {
             padding: 15px;
             /* width: 30%; */
         }
+
         .earth-visualization {
             margin: 0;
             min-height: 200px;
@@ -353,78 +359,43 @@
         </div>
     </div>
 
+    <div id="content-section1" style="margin-bottom: 50px;">
+        <img src="林地分布.png" alt="林地分布" style="/* 图片样式 */
+          max-width: 100%;
+          height: auto;
+          display: block;
+          margin: 0 auto;
+          /* 可根据需要添加其他样式 */">
+      </div>
+
+      <div id="content-section1" class="content-section">
+        <div class="text-content">
+            <h2 class="section-title">全国森林覆盖率变化趋势</h2>
+            <p class="description">
+                <!-- @pixelbeat<br> -->
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中国的林木覆盖减少：
+                从2001到2023，中国损失了12.1Mha的树木覆盖，相当于2000以来树木覆盖减少量的7.4%以及5.61Gt的二氧化碳排放量。   </p>
+
+            </p>
+        </div>
+        
+        <div class="diagram" id="diagram2">
+        </div>
+    </div>
 
     <div id="content-section1" class="content-section">
         <div class="text-content">
-            <h2 class="section-title">二氧化碳排放因子</h2>
+            <h2 class="section-title">全国森林面积变化趋势</h2>
             <p class="description">
                 <!-- @pixelbeat<br> -->
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将排放估算与可实时观测的物理量（FRE）直接联系，提升了时效性和准确性。通过按森林类型细化排放因子，能够更精准地反映不同森林生态系统的火灾排放情况，从而显著提高中国森林火灾排放清单的精度。    </p>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;自2002年起至 2023年止，中国损失了80.7 kha的湿润原始森林，占其同期树木覆盖损失总面积的0.68%，在这段时间里，中国的湿润原始森林的总面积减少了4.7%</p>
 
             </p>
         </div>
         
         <div class="diagram" id="diagram1">
-
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-    <div id="content-section2" class="content-section">
-        <div class="text-content">
-            <h2 class="section-title">中国FRE统计</h2>
-            <p class="description">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;基于时间积分公式计算 FRE，核心参数包括火辐射功率峰值（FRPpeak）、燃烧持续时间（t）及火点日循环修正系数（x）。2016年至2024年期间，中国的火点辐射能量（FRE）总体呈现出波动下降的趋势，这期间存在着明显的年份差异和季节性、区域性特征。            </p>
-        </div>
-        
-        <div class="diagram" id="diagram2">
-
-        </div>
-    </div>
-
-
-
-
-
-
-    <div id="content-section3" class="content-section">
-        <div class="text-content">
-            <h2 class="section-title">森林火灾碳排放</h2>
-            <p class="description">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将排放估算与可实时观测的物理量（FRE）直接联系，提升了时效性和准确性。通过按森林类型细化排放因子，能够更精准地反映不同森林生态系统的火灾排放情况，从而显著提高中国森林火灾排放清单的精度。
-            </p>
-        </div>
-        
-        <div class="diagram" id="diagram3">
-
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- <div class="footer-nav">
-        <div class="nav-item">系统简介</div>
-        <div class="nav-item">遥感预警</div>
-        <div class="nav-item">森林变化</div>
-        <div class="nav-item">火情分析</div>
-        <div class="nav-item">碳达标核算</div>
-    </div> -->
 
     <script>
         // 导航项点击事件
@@ -436,7 +407,7 @@
         const systemIntroduction = document.getElementById('system-introduction');
         const CAccounting = document.getElementById('C-accounting');
         navItems.forEach(i => i.classList.remove('active'));
-        fireAnalysis.classList.add('active');
+        forestChanges.classList.add('active');
 
         // 火情分析点击事件
             fireAnalysis.addEventListener('click', function() {
@@ -472,184 +443,42 @@
             // this.classList.add('active');
             window.location.href = 'C-accounting.html';
         });
-
     </script>
-    <!-- ///////////////////////////////////////////////////////////////////////////////////////图表 -->
-
-    <script type="text/javascript">
-        // import * as echarts from 'echarts';
-
-        var chartDom = document.getElementById('diagram1');
-            var myChart = echarts.init(chartDom);
-            var option;
-
-            option = {
-            title: [
-                {
-                left: 'center',
-                text: '基于FRE的森林火灾二氧化碳排放因子'
-                }
-            ],
-            polar: {
-                radius: [30, '80%']
-            },
-            radiusAxis: {
-                max: 750
-            },
-            angleAxis: {
-                type: 'category',
-                data: ['针叶林', '落叶阔叶林', '混合林', '常绿阔叶林'],
-                startAngle: 75
-            },
-            tooltip: {},
-            series: {
-                type: 'bar',
-                data: [694, 672, 637, 613],
-                coordinateSystem: 'polar',
-                label: {
-                show: true,
-                position: 'middle',
-                formatter: '{b}: {c}'
-                }
-            },
-            animation: false
-            };
-
-            option && myChart.setOption(option);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
+<script type="text/javascript">
 
         var chartDom = document.getElementById('diagram2');
         var myChart = echarts.init(chartDom);
         var option;
 
-        let base = +new Date(2016, 9, 3);
-        let oneDay = 24 * 3600 * 1000;
-        let data = [[base, Math.random() * 300]];
-        for (let i = 1; i < 3000; i++) {
-        let now = new Date((base += oneDay));
-        data.push([+now, Math.round(Math.max(0, Math.min(100, data[i - 1][1] + (Math.random() - 0.5) * 4)))]);        // data.push([+now, Math.round((Math.random() - 0.5) * 20 + data[i - 1][1])]);
-        }
         option = {
+            
+    title: {
+    left: 'center',
+    text: '全国森林覆盖率'
+  },
         tooltip: {
             trigger: 'axis',
-            position: function (pt) {
-            return [pt[0], '10%'];
+            axisPointer: {
+            type: 'shadow'
             }
         },
-        title: {
-            left: 'center',
-            text: '中国地区火点辐射能量(FRE)统计图'
-            
+        color: '#228B22',
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
         },
-        toolbox: {
-            feature: {
-            dataZoom: {
-                yAxisIndex: 'none'
-            },
-            restore: {},
-            saveAsImage: {}
-            }
-        },
-        xAxis: {
-            type: 'time',
-            boundaryGap: false
-        },
-        yAxis: {
-            type: 'value',
-            boundaryGap: [0, '100%']
-        },
-        dataZoom: [
-            {
-            type: 'inside',
-            start: 0,
-            end: 20
-            },
-            {
-            start: 0,
-            end: 20
-            }
-        ],
-        series: [
-            {
-            name: 'FRE Data',
-            type: 'line',
-            smooth: true,
-            symbol: 'none',
-            areaStyle: {},
-            data: data
-            }
-        ]
-        };
-
-        option && myChart.setOption(option);
-
-
-
-
-
-
-
-
-
-
-
-    </script>
-    <script>
-
-        var chartDom = document.getElementById('diagram3');
-        var myChart = echarts.init(chartDom);
-        var option;
-
-        option = {
-        title: {
-            text: '2016-2024中国森林火灾CO2排放',
-            subtext: 'CO2 Data'
-
-        },
-        tooltip: {
-            trigger: 'axis'
-        },
-        legend: {
-            data: ['Low', 'High']
-        },
-        toolbox: {
-            show: true,
-            feature: {
-            dataView: { show: true, readOnly: false },
-            magicType: { show: true, type: ['line', 'bar'] },
-            restore: { show: true },
-            saveAsImage: { show: true }
-            }
-        },
-        calculable: true,
         xAxis: [
             {
             type: 'category',
-            // prettier-ignore
-            data: ['2016', '2017', '2018', '2019', '2020', '2022', '2023', '2024']
+            data: ['1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022'],
+            axisTick: {
+                alignWithLabel: true
+            }
             }
         ],
         yAxis: [
@@ -659,43 +488,78 @@
         ],
         series: [
             {
-            name: 'Low',
+            name: 'Direct',
             type: 'bar',
-            data: [
-                3.5, 4.0, 2.5,3.0,2.0,1.8,2.2,1.5,1.8
-            ],
-            markPoint: {
-                data: [
-                { type: 'max', name: 'Max' },
-                { type: 'min', name: 'Min' }
-                ]
-            },
-            markLine: {
-                data: [{ type: 'average', name: 'Avg' }]
-            }
-            },
-            {
-            name: 'High',
-            type: 'bar',
-            data: [
-               6.0,7.5,4.5,5.5,4.0,3.5,4.0,3.0,3.2
-            ],
-            markPoint: {
-                data: [
-                { name: 'Max', value: 182.2, xAxis: 7, yAxis: 183 },
-                { name: 'Min', value: 2.3, xAxis: 11, yAxis: 3 }
-                ]
-            },
-            markLine: {
-                data: [{ type: 'average', name: 'Avg' }]
-            }
+            barWidth: '60%',
+            data: ['13.40', '13.40', '13.40', '13.40', '13.40', '13.92', '13.92', '16.55', '16.55', '16.55', '16.55', '18.21', '20.36', '20.36', '20.36', '20.36', '20.36', '21.63', '21.63', '21.63', '21.63', '21.63', '22.96', '22.96', '22.96', '22.96', '22.96', '22.96', '22.96', '22.96', '22.96', '22.96']
             }
         ]
         };
 
         option && myChart.setOption(option);
 
-    </script>
-</body>
 
+
+
+
+
+
+
+var chartDom = document.getElementById('diagram1');
+var myChart = echarts.init(chartDom);
+var option;
+
+option = {
+    title: {
+    left: 'center',
+    text: '全国森林面积变化图'
+  },
+tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+    type: 'shadow'
+    }
+},
+color: '#228B22',
+grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+},
+xAxis: [
+    {
+    type: 'category',
+    data: ['1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022'],
+    axisTick: {
+        alignWithLabel: true
+    }
+    }
+],
+yAxis: [
+    {
+    type: 'value'
+    }
+],
+series: [
+    {
+    name: 'Direct',
+    type: 'bar',
+    barWidth: '60%',
+    data:['12863.00', '12863.00', '12863.00', '12863.00', '12863.00', '13370.00', '13370.00', '15894.00', '15894.00', '15894.10', '15894.10', '17490.90', '19545.22', '19545.22', '19545.22', '19545.22', '19545.22', '20768.73', '20768.73', '20768.73', '20768.73', '20768.73', '22044.62', '22044.62', '22044.62', '22044.62', '22044.62', '22044.62', '22044.62', '22044.62', '22044.62']
+    }
+]
+};
+
+option && myChart.setOption(option);
+
+</script>
+
+
+
+
+
+
+
+</body>
 </html>
